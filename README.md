@@ -1,10 +1,9 @@
 # 在原repo基础上新增雾凇拓展词库
-* 下载已经转码完成的词库表 https://github.com/jack2game/rime-flypy-extended/tree/ice-extended/cn_dict_ext
+* 下载已经转码完成的[词库表](https://github.com/jack2game/rime-flypy-extended/tree/ice-extended/cn_dict_ext)
 * 下载两个方案所对应的词库配置
-	* 小鹤双拼+自然快手 https://github.com/jack2game/rime-flypy-extended/blob/ice-extended/flypy_zrmfast_extra.dict.yaml
- 	* 小鹤双拼+小鹤双形 https://github.com/jack2game/rime-flypy-extended/blob/ice-extended/flypy_flypy_extra.dict.yaml
-* 在`flypy_zrmfast.schema.yaml`文件中启用相应词库即可
-	* https://github.com/jack2game/rime-flypy-extended/blob/71b5870a600068a34ecf3c902305c9255130f0b5/flypy_zrmfast.schema.yaml#L80
+	* 小鹤双拼+自然快手[拓展词库](https://github.com/jack2game/rime-flypy-extended/blob/ice-extended/flypy_zrmfast_extra.dict.yaml)
+ 	* 小鹤双拼+小鹤双形[拓展词库](https://github.com/jack2game/rime-flypy-extended/blob/ice-extended/flypy_flypy_extra.dict.yaml)
+* 在`flypy_zrmfast.schema.yaml`文件中启用相应词库即可，示例[直达链接](https://github.com/jack2game/rime-flypy-extended/blob/71b5870a600068a34ecf3c902305c9255130f0b5/flypy_zrmfast.schema.yaml#L80)
 
 # Rime 输入法双拼加辅助码方案
 <!-- # 这是一个 Rime 配置文件示例 -->
