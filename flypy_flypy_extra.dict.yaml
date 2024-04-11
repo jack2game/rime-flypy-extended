@@ -1,0 +1,14 @@
+---
+name: flypy_flypy_extra
+version: "2024.04.11"
+sort: by_weight
+use_preset_vocabulary: false
+
+import_tables:
+  - cn_dict_ext/flypy_flypy_8105     # 8105字表
+  - cn_dict_ext/flypy_flypy_41448    # 41448字表
+  - cn_dict_ext/flypy_flypy_base     # 基础词库
+  - cn_dict_ext/flypy_flypy_ext      # 扩展词库
+  # - cn_dict_ext/flypy_flypy_tencent  # 腾讯词向量（大词库，部署时间较长）
+  # - cn_dict_ext/others   # 一些杂项 容错音和错字 可以不开
+...

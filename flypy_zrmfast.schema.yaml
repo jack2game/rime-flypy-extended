@@ -77,7 +77,10 @@ speller:
     #- xform/[[]// ## 取消注释后：直接引导辅助码
 
 translator:
-  dictionary: flypy_zrmfast
+  # dictionary: flypy_zrmfast       ## 使用小鹤+自然快手辅助码
+  # dictionary: flypy_flypy         ## 使用小鹤+鹤形原版辅助码
+  # dictionary: flypy_zrmfast_extra ## 使用小鹤+自然快手辅助码+拓展（含雾凇）
+  dictionary: flypy_flypy_extra   ## 使用小鹤+鹤形原版辅助码+拓展（含雾凇）
   spelling_hints: 2
   # enable_user_dict: true
   # preedit_format:
@@ -149,8 +152,9 @@ key_binder:
     #- { when: composing, accept: Tab, send: '[' } ## 取消注释后：tab引导辅助码
     - { when: composing, accept: Control+m, send: Return }
     - { when: composing, accept: Control+w, send: Control+BackSpace }
-    - { when: has_menu, accept: semicolon, send: 2 }
-    - { when: has_menu, accept: slash, send: 3 }
+    - { when: has_menu, accept: semicolon, send: 2 } ## 分号用于第2候选
+    - { when: has_menu, accept: apostrophe, send: 3 } ## 单引号用于第3候选
+    - { when: composing, accept: slash, send: '[' } ## 斜杠引导辅助码
     - { when: composing, accept: Control+i, send: Shift+Right }
     - { when: composing, accept: Control+o, send: Shift+Left }
     ## 对以下4行取消注释后：启用光标回退至特定音节后、补充辅助码的功能
