@@ -107,7 +107,7 @@ def rewrite_row(row: list, code_fn: callable):
     # ['sj[hh', 'ji[[', 'ls[yp']
     code_list = [code_fn(py, zi) for (py, zi) in zip(pinyin_list, zh_chars)]
     row[1] = " ".join(code_list)  # 'sj[hh ji[[ ls[yp'
-    row[0] = opencc_s2t.convert(zh_chars)
+    # row[0] = opencc_s2t.convert(zh_chars)
     return row
 
 
