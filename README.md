@@ -1,4 +1,4 @@
-# 在原repo基础上新增雾凇拓展词库以及繁體支持
+# 在原repo基础上新增雾凇拓展词库
 * 下载已经转码完成的[词库表](https://github.com/jack2game/rime-flypy-extended/tree/ice-extended/cn_dict_ext)
 * 下载两个方案所对应的词库配置
 	* 小鹤双拼+自然快手[拓展词库](https://github.com/jack2game/rime-flypy-extended/blob/ice-extended/flypy_zrmfast_extra.dict.yaml)
