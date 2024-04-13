@@ -1,0 +1,247 @@
+# Rime schema
+# encoding:utf-8
+
+schema:
+  schema_id: zzdyx_single
+  name: 哲豆单字版
+  version: "20061101～20220119"
+  author:
+    - 哲哲豆<syhgzzhh@163.com>
+  description: |
+    哲豆音形单字版
+  dependencies:
+    - pinyin_simp
+    - stroke
+
+switches: 
+  - options: [ _keyboard_menu, _keyboard_menu]
+    states: [ "　☰ ", "　☰ "]
+  - options: [ _keyboard_GNeng, _keyboard_GNeng]
+    states: [ " ‹ ɪ ›", " ‹ ɪ ›"]
+
+  - options: [ _keyboard_.default, _keyboard_defaultZZD]
+    states: [ "　　　　　　", "　　　　　　"]
+  - options: [ _key_Hide]
+    states: [ "﹀"]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator@custom_phrase
+    - table_translator@hexin
+
+    - table_translator
+    - reverse_lookup_translator
+    - reverse_lookup_translator@pinyin
+    - reverse_lookup_translator@stroke_lookup
+    - history_translator@historyz
+  filters:
+    - simplifier@simplifier
+    - uniquifier
+    - simplifier@stroke
+    - simplifier@pinyin
+    - "reverse_lookup_filter@pinyin_lookup"
+    - "reverse_lookup_filter@stroke_lookup"
+    - reverse_lookup_filter@o_reverse_lookup
+
+    - "simplifier@Emoji"
+    - "simplifier@Emoji_BIG"
+    - "simplifier@PY"
+    - "simplifier@CnEnglish"
+    - "simplifier@Cn_English"
+    - "simplifier@chaoji"
+
+speller:
+  alphabet: 'abcdefghijklmnopqrstuvwxyz'
+  initials: 'abcdefghijklmnopqrstuvwxyz'
+  auto_clear: max_length #manual|auto|max_length 空码按下一键确认清屏|空码自动清|达到最长码时后码顶上清屏
+  auto_select: true
+  max_code_length: 4
+  auto_select_pattern: "^v.$|^v..$|^[a-z]{4}$"
+
+simplifier:
+  option_name: traditional
+  opencc_config:  s2t.json
+
+translator:
+  dictionary: zzdyx_single
+  #enable_completion: false # 编码提示开关
+  enable_sentence: false
+  enable_user_dict: false
+  disable_user_dict_for_patterns:
+    - "^.*$"
+
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: -1
+
+historyz:
+  input: e
+  size: 1 #重复前几次上屏
+  initial_quality: 0 #重码居后
+
+
+reverse_lookup:
+  dictionary: stroke
+  enable_completion: true
+  prefix: "``"
+  suffix: "'"
+  tips: "〔笔画查字〕"
+
+reverse_lookup:
+  dictionary: pinyin
+  prefix: "`"
+  suffix: ""
+  #tips: 〔反查〕
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+  comment_format:
+    - xform/ /\ |\ /
+    - xform/$/ 〕/
+    - xform/^/〔 /
+    - xform/\ i.+?\ \|//
+    - xform/\|\ i.+?\ 〕/\ 〕/
+    - xform/(\ i\S{3}).\ /$1\ /
+
+punctuator:
+  full_shape:
+    ',' : { commit: ， }
+    '.' : { commit: 。 }
+    ';' : { commit: ； }
+    ':' : { commit: ： }
+    '!' : { commit: ！ }
+    '?' : { commit: ？ }
+    "'" : { pair: [ ‘, ’ ] }
+    '"' : { pair: [ “, ” ] }
+    ' ' : { commit: '　' }    
+    '*' : [ ＊, × ]
+    '/' : [ 、, ÷ ]
+    '<' : [ 《, 〈, «, ‹, 〔 ]
+    '>' : [ 》, 〉, », ›,  〕]
+    '(' : { commit: （ }
+    ')' : { commit: ） }
+  half_shape:
+    ',' : { commit: ， }
+    '.' : { commit: 。 }
+    '/' : { commit: 、 }
+    ';' : { commit: ； }
+    ':' : { commit: ： }
+    '!' : { commit: ！ }
+    '?' : { commit: ？ }
+    '<' : { commit: 《 }
+    '>' : { commit: 》 }
+    '(' : { commit: （ }
+    ')' : { commit: ） }
+    "'" : { pair: [ ‘, ’ ] }
+    '"' : { pair: [ “, ” ] }
+  import_preset: _User/_s #这个地方是调用symbols文件夹的两个必要设定之一
+
+key_binder:
+  import_preset: default
+  bindings:
+    - {accept: semicolon, send: 2, when: has_menu} #分號選第二重碼
+    - {accept: apostrophe, send: 3, when: has_menu} #引號選第三重碼
+    - {accept: "Control+1", select: .next, when: always}
+    - {accept: "Control+2", toggle: full_shape, when: always}
+    - {accept: "Control+3", toggle: simplification, when: always}
+    - {accept: "Control+4", toggle: extended_charset, when: always}
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "^``[a-z]*'?$"
+    pinyin: "^`[a-z]*'?$"
+   # punct: "^/([0-9]+|[a-z]+|[A-Z]+|)$"    
+    #punct: "^/[a-z]*$"
+    xxx: "^[^v].[a-z]$"
+    o_reverse_lookup_pattern: "^o[a-z]+$"
+
+o_reverse_lookup:
+  tags: [ o_reverse_lookup_pattern ]
+  dictionary: zzdyx_single
+  overwrite_comment: false # 覆盖其他提示
+  comment_format: &comment
+    - xform/ /\ |\ /
+    - xform/$/ 〕/
+    - xform/^/〔 /
+    #- xform/([nl])v/$1ü/
+    #- xform/([nl])ue/$1üe/
+    #- xform/([jqxy])v/$1u/
+
+menu:
+  page_size: 10 #候选项数
+
+PY:
+  option_name: PY #對應switches中設定的切換項名
+  opencc_config: PY.json #用字轉換配置文件，位於【rime_dir/opencc/】
+  show_in_comment: true
+  cmment_frmat: 
+    - "xform/<br>/\n/"
+    - "xform/&nbsp//"
+  #tags: #此选项不知何用
+    - abc
+  tips: all #形码注音专用
+
+
+hexin:
+  dictionary: oFC
+  user_dict: ""
+  db_class: stabledb
+  enable_completion: true
+  enable_sentence: false
+  initial_quality: -0.1
+  enable_user_dict: false
+
+Emoji:
+  option_name: Emoji #對應switches中設定的切換項名
+  opencc_config: Emoji.json #用字轉換配置文件，位於【rime_dir/opencc/】
+  show_in_comment: false
+  cmment_frmat: 
+    - "xform/<br>/\n/"
+    - "xform/&nbsp//"
+  #tags: #此选项不知何用
+    - abc
+  #tips: all
+
+Emoji_BIG:
+  option_name: Emoji_BIG #對應switches中設定的切換項名
+  opencc_config: Emoji_BIG.json #用字轉換配置文件，位於【rime_dir/opencc/】
+  show_in_comment: false
+  cmment_frmat: 
+    - "xform/<br>/\n/"
+    - "xform/&nbsp//"
+  #tags: #此选项不知何用
+    - abc
+  #tips: all
+
+chaoji:
+  option_name: chaoji #對應switches中設定的切換項名
+  opencc_config: chaoji.json #用字轉換配置文件，位於【rime_dir/opencc/】
+  show_in_comment: false
+  cmment_frmat: 
+    - "xform/<br>/\n/"
+    - "xform/&nbsp//"
+  #tags: #此选项不知何用
+    - abc
+  #tips: all

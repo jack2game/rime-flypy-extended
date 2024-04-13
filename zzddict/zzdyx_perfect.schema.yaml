@@ -1,0 +1,267 @@
+# Rime schema
+# encoding:utf-8
+
+schema:
+  schema_id: zzdyx_perfect
+  name: 哲豆圆满版
+  version: "20061101～20170407"
+  author:
+    - 哲哲豆<syhgzzhh@163.com>
+  description: |
+    哲豆音形圆满版
+  dependencies:
+    - pinyin_simp
+    - stroke
+
+menu:
+  page_size: 40
+
+switches: 
+  - {name: AXeng, reset: 1}
+  - {options: [ _keyboard_menu ], states: [ "　☰" ]} #菜单
+
+  - {options: [ _keyboard_GNeng ], states: [ " ‹ ɪ ›"]} #功能键盘
+
+  - {options: [ _keyboard_.default, _keyboard_defaultZZD ], states: [ "　　　", "　　　"]} #助记
+
+  #- {options: [ _key_Hide], states: [ "﹀"]} #同时增减助记空格调﹀位置
+
+
+speller: #上屏规则
+  alphabet: 'abcdefghijklmnopqrstuvwxyz14567890' #2用来次选
+  initials: 'abcdefghijklmnopqrstuvwxyz'
+  delimiter: "*"
+  auto_clear: max_length #manual|auto|max_length 空码按下一键确认清屏|空码自动清|达到最长码时后码顶上清屏
+  auto_select: true
+  max_code_length: 4
+  auto_select_pattern: "^v.$|^v..$|^[a-z]{4}$"
+
+simplifier: {option_name: traditional, opencc_config: s2tw.json, tips: all}
+#简繁对照:char单字/all字词
+
+
+translator: #翻译策略
+  dictionary: zzdyx_perfect
+  initial_quality: 0
+  enable_completion: true
+  enable_sentence: false
+  enable_encoder: false
+  encode_commit_history: false
+  max_phrase_length: 2
+  enable_user_dict: false
+  #db_class: userdb
+  disable_user_dict_for_patterns:
+    - "^[ov].*$"
+    - "^.*$"
+  preedit_format:
+    - xform/^o(.*)/$1/
+
+    - xform/^u(.+)/q$1/
+    - xform/^i(.+)/z$1/
+
+  comment_format:
+    - xform/~/ /
+
+
+
+engine:
+  filters:
+    - reverse_lookup_filter@o_reverse
+    - simplifier
+    - "simplifier@PY"
+    - "simplifier@AXeng"
+    - simplifier@stroke
+    - simplifier@pinyin
+    - reverse_lookup_filter@pinyin_lookup
+    - uniquifier #过滤重复字
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+
+   # - affix_segmentor@Eng
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator@custom_phrase
+    - table_translator
+    - lua_translator@date
+  #  - lua_translator@date1
+    - lua_translator@time
+
+    - history_translator@historyz
+    - table_translator@hexin
+    - reverse_lookup_translator
+    - reverse_lookup_translator@pinyin
+    - reverse_lookup_translator@stroke_lookup
+
+
+historyz:
+  input: e
+  size: 1 #重复前几次上屏
+  initial_quality: 0 #重码居后
+
+
+
+hexin:
+  dictionary: oFC
+  enable_completion: true
+  enable_sentence: false
+  enable_encoder: false
+  enable_user_dict: false
+  initial_quality: 0
+
+
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: -1
+
+
+
+
+reverse_lookup:
+  dictionary: stroke
+  enable_completion: true
+  prefix: "``"
+  suffix: "'"
+  tips: "〔笔画查字〕"
+
+reverse_lookup:
+  dictionary: pinyin
+  prefix: "`"
+  suffix: ""
+  #tips: 〔反查〕
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+  comment_format:
+    - xform/ /\ |\ /
+    - xform/$/ 〕/
+    - xform/^/〔 /
+    - xform/\ i.+?\ \|//
+    - xform/\|\ i.+?\ 〕/\ 〕/
+    - xform/(\ i\S{3}).\ /$1\ /
+
+
+
+
+key_binder:
+    bindings:
+    - {accept: semicolon, send: 2, when: has_menu} #分号次选
+    - {accept: apostrophe, send: 3, when: has_menu} #引号三选
+    - {accept: Tab, send: Escape, when: composing} #Tab清除输入
+    - {accept: "Control+bracketleft", send: Escape, when: composing}
+#重定义Keyboard_default指向
+
+    - {when: has_menu, accept: space, send: space}
+    - {when: composing, accept: space, send: Escape} #空码时空格清屏
+
+
+recognizer:
+  patterns:
+    o_reverse_pattern: "^o.[a-z]+$"
+
+    AXeng: "^[a-n&p-u&w-z][a-z]{1,2}$|^[@*]$|^v[qtyopscb]$"
+    reverse_lookup: "^``[a-z]*'?$"
+    pinyin: "^`[a-z]*'?$"
+   # punct: "^/([0-9]+|[a-z]+|[A-Z]+|)$"  
+    xxx: "^[^v].[a-z]$"
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$"
+    zaoci: "^[a-z]*\\*[a-z\\*]*$"
+#造词
+
+
+
+o_reverse:
+  tags: [ o_reverse_pattern ]
+  dictionary: zzdyx_perfect
+  overwrite_comment: true ##
+# 覆盖其他提示
+  comment_format: &comment
+    - xform/(^|\W)(\w{2,3})\W(\2\w+)/$1$3/
+    - xform/(^|\W)(\w{2,3})\W(\2\w+)/$1$3/
+    - xform/(^|\W)(\w{2,3})\W(\2\w+)/$1$3/
+
+    - xform/(^|\W)([^uoav])\W(\2\w+)/$1$3/
+
+    - xform/(\W)[ov]\w+//
+    - xform/(^)[ov]\w+\W/$1/
+    - xform/(^)[ov]\w+$//
+
+    - xform/ /\|/
+    - xform/$/\] /
+    - xform/^/ \[/
+
+
+
+
+
+AXeng:
+  option_name: AXeng
+  opencc_config: AXeng.json
+  show_in_comment: true
+#false,倒换标注候选
+  #excluded_types: 
+#取消特定范围〔一般为reverse_lookup_translator〕转化用字
+  tips: all #char仅单字/all字词有效
+  tags: [ AXeng ]
+
+PY: {option_name: PY, opencc_config: PY.json, show_in_comment: true, tips: char}
+
+
+
+punctuator:
+  half_shape: &half
+    ',' : { commit: ， }
+    '.' : { commit: 。 }
+    '/' : { commit: 、 }
+    ';' : { commit: ； }
+    ':' : { commit: ： }
+    '!' : { commit: ！ }
+    '?' : { commit: ？ }
+    '<' : { commit: 《 }
+    '>' : { commit: 》 }
+    '(' : { commit: （ }
+    ')' : { commit: ） }
+    "'" : { pair: [ ‘, ’ ] }
+    '"' : { pair: [ “, ” ] }
+    '@':
+      - '@'
+      - '@qq.com'
+      - '@sina.com'
+      - '@gmail.com'
+      - '@163.com'
+      - '@139.com'
+      - '@sohu.com'
+      - '@huawei.com'
+      - '@yahoo.com.cn'
+      - '@126.com'
+      - '@hotmail.com'
+
+    '*':
+      - '*'
+      - '说明书:'
+      - "❶点击候选栏空白处可切换助记键盘。❷键盘功能：㈠长按回车为菜单㈡右滑Shift为清行㈢键盘a-z界面左右滑会移动光标一单位㈣空格键左右滑移动光标四单位㈤空格上滑为文本首行缩进（在打补丁的两个主题中上滑长按是两种不同格式的缩进）。❸语音输入为长按空格（在打补丁的两个主题中配置了语音按键）输入法平台自带语音输入引擎，可在设置中选择手机自带的，部分机型上表现不一，可以正常使用语音。❹输入法配套所有核心文件皆存在“用户文件夹”内，改动配置的操作需在其中进行，用户文件夹位置在输入法设置中查看。❺输入法设置中有很多功能，可查看是否有需要调节的项，如高度和输入习惯等，如有闪退恢复原设置即可。"
+
+
+
+
+
+  full_shape: *half
+
+
