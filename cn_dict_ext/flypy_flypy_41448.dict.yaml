@@ -79,7 +79,7 @@ sort: by_weight
 堨	ai[tv
 塧	ai[[
 壒	ai[[
-娭	ai[[
+娭	ai[nu
 娾	ai[[
 嫒	ai[ny
 嬡	ai[ny
@@ -1783,9 +1783,9 @@ sort: by_weight
 驫	bn[mm
 骉	bn[mm
 骠	bn[mx
-髟	bn[[
+髟	bn[ap
 鳔	bn[ax
-麃	bn[[
+麃	bn[gh
 𠔂	bn[[
 𠚠	bn[[
 𠬪	bn[[
@@ -2140,7 +2140,7 @@ sort: by_weight
 玻	bo[wy
 瓝	bo[[
 瓟	bo[[
-癶	bo[[
+癶	bo[vn
 癷	bo[[
 皪	bo[[
 盋	bo[[
@@ -2441,7 +2441,7 @@ sort: by_weight
 䴺	cd[[
 倸	cd[[
 偲	cd[rx
-啋	cd[[
+啋	cd[km
 埰	cd[pm
 婇	cd[[
 寀	cd[pm
@@ -3980,7 +3980,7 @@ sort: by_weight
 鷘	ii[[
 鸱	ii[dn
 麶	ii[[
-黐	ii[[
+黐	ii[hd
 齒	ii[vk
 齝	ii[[
 齿	ii[vk
@@ -4549,7 +4549,7 @@ sort: by_weight
 喘	ir[ke
 圌	ir[ke
 堾	ir[to
-巛	ir[[
+巛	ir[vv
 川	ir[pl
 暷	ir[[
 椯	ir[[
@@ -5378,7 +5378,7 @@ sort: by_weight
 皴	cy[sy
 竴	cy[[
 籿	cy[[
-膥	cy[[
+膥	cy[mr
 踆	cy[[
 蹲	cy[zc
 邨	cy[te
@@ -9196,7 +9196,7 @@ sort: by_weight
 尜	ga[xx
 尬	ga[yl
 旮	ga[jo
-朒	ga[[
+朒	ga[or
 玍	ga[[
 軋	ga[iv
 轧	ga[iv
@@ -10081,7 +10081,7 @@ sort: by_weight
 崓	gu[[
 崮	gu[ek
 巬	gu[[
-巭	gu[[
+巭	gu[gf
 怘	gu[[
 愲	gu[[
 扢	gu[[
@@ -10773,7 +10773,7 @@ sort: by_weight
 呙	go[kn
 咼	go[kn
 啯	go[[
-喐	go[[
+喐	go[ke
 嘓	go[[
 囗	go[[
 囯	go[[
@@ -13243,7 +13243,7 @@ sort: by_weight
 吙	ho[[
 和	ho[hk
 咟	ho[[
-喐	ho[[
+喐	ho[ke
 嚄	ho[ky
 嚯	ho[kf
 嚿	ho[[
@@ -14345,7 +14345,7 @@ sort: by_weight
 猏	jm[[
 玪	jm[[
 珔	jm[[
-瑊	jm[[
+瑊	jm[wk
 瑐	jm[[
 监	jm[lm
 監	jm[lm
@@ -14354,12 +14354,12 @@ sort: by_weight
 瞯	jm[[
 瞷	jm[[
 瞼	jm[oa
-硷	jm[[
+硷	jm[ua
 碊	jm[[
 碱	jm[uk
 磵	jm[[
 礀	jm[[
-礆	jm[[
+礆	jm[ua
 礛	jm[[
 礷	jm[[
 稴	jm[[
@@ -14772,7 +14772,7 @@ sort: by_weight
 嘂	jn[[
 嘄	jn[[
 嘐	jn[[
-嘦	jn[[
+嘦	jn[kn
 噍	jn[kh
 噭	jn[[
 嚼	jn[kc
@@ -15121,7 +15121,7 @@ sort: by_weight
 楷	jp[mb
 榤	jp[[
 檞	jp[mn
-毑	jp[[
+毑	jp[my
 洁	jp[dk
 洯	jp[[
 湝	jp[db
@@ -15581,8 +15581,8 @@ sort: by_weight
 浄	jk[[
 涇	jk[dg
 淨	jk[dl
-澋	jk[[
-瀞	jk[[
+澋	jk[dx
+瀞	jk[dl
 猄	jk[qx
 獍	jk[qe
 璄	jk[[
@@ -17065,7 +17065,7 @@ sort: by_weight
 苛	ke[ck
 萪	ke[[
 薖	ke[[
-蚵	ke[[
+蚵	ke[ik
 蝌	ke[iu
 衉	ke[[
 袔	ke[[
@@ -18349,7 +18349,7 @@ sort: by_weight
 劳	lc[cl
 労	lc[[
 勞	lc[cl
-咾	lc[[
+咾	lc[kb
 哰	lc[[
 唠	lc[kl
 嗠	lc[[
@@ -18838,7 +18838,7 @@ sort: by_weight
 歷	li[il
 沥	li[dl
 沴	li[[
-沵	li[[
+沵	li[dx
 浬	li[dl
 浰	li[dd
 涖	li[[
@@ -22100,11 +22100,11 @@ sort: by_weight
 櫁	mi[[
 汨	mi[do
 沕	mi[[
-沵	mi[[
+沵	mi[dx
 泌	mi[db
 洣	mi[dm
 淧	mi[[
-渳	mi[[
+渳	mi[de
 滵	mi[[
 漞	mi[[
 濔	mi[[
@@ -22856,7 +22856,7 @@ sort: by_weight
 蛑	mz[in
 謀	mz[ym
 谋	mz[ym
-踎	mz[[
+踎	mz[zk
 鍪	mz[sj
 鞪	mz[[
 鴾	mz[[
@@ -24184,7 +24184,7 @@ sort: by_weight
 𩷁	no[[
 女	nv[va
 恧	nv[ex
-朒	nv[[
+朒	nv[or
 沑	nv[[
 籹	nv[[
 聏	nv[[
@@ -24378,7 +24378,7 @@ sort: by_weight
 䙪	pj[[
 䰉	pj[[
 䰔	pj[[
-丬	pj[[
+丬	pj[dl
 冸	pj[[
 判	pj[bd
 叛	pj[by
@@ -24573,7 +24573,7 @@ sort: by_weight
 铇	pc[[
 靤	pc[[
 鞄	pc[[
-麃	pc[[
+麃	pc[gh
 麅	pc[[
 麭	pc[[
 𠣳	pc[[
@@ -24915,7 +24915,7 @@ sort: by_weight
 毗	pi[tb
 毘	pi[[
 淠	pi[dl
-潎	pi[[
+潎	pi[dw
 澼	pi[du
 濞	pi[dl
 炋	pi[[
@@ -25228,7 +25228,7 @@ sort: by_weight
 撇	pp[fw
 暼	pp[[
 氕	pp[qp
-潎	pp[[
+潎	pp[dw
 瞥	pp[do
 苤	pp[cp
 覕	pp[[
@@ -25329,7 +25329,7 @@ sort: by_weight
 瓶	pk[bw
 甁	pk[[
 甹	pk[[
-砯	pk[[
+砯	pk[uu
 硑	pk[[
 竮	pk[[
 箳	pk[[
@@ -28110,7 +28110,7 @@ sort: by_weight
 姙	rf[[
 屻	rf[[
 岃	rf[[
-忈	rf[[
+忈	rf[ex
 忍	rf[rx
 忎	rf[[
 扨	rf[[
@@ -28621,7 +28621,7 @@ sort: by_weight
 婼	ro[nk
 嵶	ro[[
 弱	ro[gd
-挼	ro[[
+挼	ro[fn
 捼	ro[[
 楉	ro[[
 渃	ro[[
@@ -28944,7 +28944,7 @@ sort: by_weight
 鎍	se[[
 鏼	se[[
 铯	se[jb
-閪	se[[
+閪	se[mx
 闟	se[[
 雭	se[[
 飋	se[[
@@ -29190,13 +29190,13 @@ sort: by_weight
 山	uj[lk
 嶦	uj[ek
 幓	uj[[
-彡	uj[[
+彡	uj[pp
 扇	uj[hx
 挻	uj[[
 掞	uj[fh
 掸	uj[fl
 掺	uj[fp
-搧	uj[[
+搧	uj[fx
 摻	uj[fp
 撣	uj[fl
 擅	uj[fd
@@ -32146,7 +32146,7 @@ sort: by_weight
 咷	tc[[
 啕	tc[kf
 夲	tc[[
-夵	tc[[
+夵	tc[dx
 套	tc[ds
 嫍	tc[[
 幍	tc[[
@@ -33338,7 +33338,7 @@ sort: by_weight
 旽	ty[[
 暾	ty[ow
 朜	ty[[
-氽	ty[[
+氽	ty[ru
 涒	ty[[
 焞	ty[hz
 臀	ty[uo
@@ -33594,7 +33594,7 @@ sort: by_weight
 帓	wa[[
 徍	wa[[
 挖	wa[fv
-搲	wa[[
+搲	wa[fg
 攨	wa[[
 洼	wa[dt
 溛	wa[[
@@ -35019,7 +35019,7 @@ sort: by_weight
 壐	xi[[
 夕	xi[pd
 奚	xi[pd
-娭	xi[[
+娭	xi[nu
 媳	xi[nx
 嬆	xi[[
 嬉	xi[nk
@@ -35239,7 +35239,7 @@ sort: by_weight
 钑	xi[[
 铣	xi[je
 锡	xi[jw
-閪	xi[[
+閪	xi[mx
 闟	xi[[
 阋	xi[me
 隙	xi[ex
@@ -35758,7 +35758,7 @@ sort: by_weight
 幰	xm[[
 廯	xm[[
 弦	xm[gy
-彡	xm[[
+彡	xm[pp
 忺	xm[xr
 憪	xm[[
 憲	xm[be
@@ -36822,7 +36822,7 @@ sort: by_weight
 新	xb[lj
 昕	xb[oj
 杺	xb[mx
-枔	xb[[
+枔	xb[mv
 欣	xb[jr
 歆	xb[lr
 炘	xb[hj
@@ -37211,7 +37211,7 @@ sort: by_weight
 叙	xu[ry
 吁	xu[ky
 呴	xu[[
-喐	xu[[
+喐	xu[ke
 喣	xu[[
 嘘	xu[ky
 嘼	xu[[
@@ -38198,7 +38198,7 @@ sort: by_weight
 咽	yj[kd
 唁	yj[kk
 唌	yj[[
-啱	yj[[
+啱	yj[ku
 喦	yj[[
 喭	yj[[
 噞	yj[[
@@ -38212,7 +38212,7 @@ sort: by_weight
 墕	yj[th
 壛	yj[[
 壧	yj[[
-夵	yj[[
+夵	yj[dx
 奄	yj[dd
 妍	yj[nk
 妟	yj[[
@@ -39444,7 +39444,7 @@ sort: by_weight
 姨	yi[ny
 媐	yi[[
 嫕	yi[nx
-嫛	yi[[
+嫛	yi[kn
 嬄	yi[[
 嬑	yi[[
 嬟	yi[[
@@ -41328,7 +41328,7 @@ sort: by_weight
 輍	yu[[
 輿	yu[pb
 轝	yu[[
-込	yu[[
+込	yu[zr
 迂	yu[zy
 迃	yu[[
 逳	yu[[
@@ -45277,7 +45277,7 @@ sort: by_weight
 嗭	zi[[
 姉	zi[[
 姊	zi[np
-姕	zi[[
+姕	zi[vn
 姿	zi[dn
 子	zi[va
 孖	zi[zz
