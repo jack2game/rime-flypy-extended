@@ -136,14 +136,14 @@ reverse_lookup:
 
 punctuator:
   import_preset: symbols
-  half_shape:
-    '>' : [》, 〉, '> ', », › ]
+  # half_shape:
+    # '>' : [》, 〉, '> ', », › ]
     # '"' : { pair: [ '‘', '’' ] } ## 添加注释后：恢复默认引号
     # '''' : { pair: [ '“', '”' ] } ## 添加注释后：恢复默认引号
   symbols:
-    '/er': [ 二, 貳, ₂, ², Ⅱ, ⅱ, ②, ➁, ❷, ➋, ⓶, ⑵, ⒉, ２, ㊁, ㈡, 弍, 弐, 貮, 㒃, 㒳, 兩, 倆, ㆓]
-    '/san': [ 三, 叄, ₃, ³, Ⅲ, ⅲ, ③, ➂, ❸, ➌, ⓷, ⑶, ⒊, ３, ㊂, ㈢, 參, 参, 叁, 弎, 仨, ㆔]
-    '/si': [ 四, 肆, ₄, ⁴, Ⅳ, ⅳ, ④, ➃, ❹, ➍, ⓸, ⑷, ⒋, ４, ㊃, ㈣, 亖]
+    # '/er': [ 二, 貳, ₂, ², Ⅱ, ⅱ, ②, ➁, ❷, ➋, ⓶, ⑵, ⒉, ２, ㊁, ㈡, 弍, 弐, 貮, 㒃, 㒳, 兩, 倆, ㆓]
+    # '/san': [ 三, 叄, ₃, ³, Ⅲ, ⅲ, ③, ➂, ❸, ➌, ⓷, ⑶, ⒊, ３, ㊂, ㈢, 參, 参, 叁, 弎, 仨, ㆔]
+    # '/si': [ 四, 肆, ₄, ⁴, Ⅳ, ⅳ, ④, ➃, ❹, ➍, ⓸, ⑷, ⒋, ４, ㊃, ㈣, 亖]
     '/zb': [┌, └, ┐, ┘, ─, │, ├, ┤, ┬, ┴, ┼, ┏, ┗, ┓, ┛, ━, ┃, ┣, ┫, ┳, ┻, ╋] ## 制表符
 
 key_binder:
@@ -168,11 +168,11 @@ recognizer:
   # import_preset: default
   patterns:
     uppercase: "^[A-Z].*$"
-    punct: '^/[015-9A-Za-z]+$' ## use "/er" instead of "/2"
+    punct: '^/[0-9A-Za-z]+$'
     ## associate schemes: 
-    reverse_lookup: "^ab[a-z]*'?$" # "[[]b[a-z]*'?$"
+    reverse_lookup: "^ab[a-z]*'?$"       ### "[[]b[a-z]*'?$"
     quanpin: "^ap[a-z]*'?$"
-    emojis: "^ae[a-z]*'?$" # "^ae.*$" 
+    emojis: "^ae[a-z]*'?$"     ### "^ae.*$" 
     verbatim: "^as.*$"
     soft_capslock: "^au.*$"
     dbpy_flypy_help: "^ac.*$"
@@ -181,7 +181,7 @@ recognizer:
     func_translator: "^af(.*)$"
 
 menu:
-  page_size: 4
+  page_size: 10
 
 quanpin:
   tag: quanpin
