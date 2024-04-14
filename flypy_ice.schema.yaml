@@ -8,7 +8,7 @@ schema:
   author:
     - jack2game
   description: |
-    小鹤双拼双形，配合雾凇词库
+    小鹤+辅助码，配合雾凇词库
   dependencies:
     - luna_pinyin
     - chaizi
@@ -74,10 +74,13 @@ speller:
     - derive/^(..).+$/$1/
     - derive/^(..[[].).+$/$1/
     - derive/^([jqxy])u/$1v/
-    - xform/[[]// ## 取消注释后：直接引导辅助码
+    # - xform/[[]// ## 取消注释后：直接引导辅助码
 
 translator:
-  dictionary: flypy_flypy_extra
+  dictionary: flypy_flypy_extra   ## 使用小鹤+鹤形原版辅助码+拓展（含雾凇）
+  # dictionary: flypy_zrmfast_extra ## 使用小鹤+自然快手辅助码+拓展（含雾凇）
+  # dictionary: flypy_flypy         ## 使用小鹤+鹤形原版辅助码
+  # dictionary: flypy_zrmfast       ## 使用小鹤+自然快手辅助码
   spelling_hints: 2
   # enable_user_dict: true
   # preedit_format:
