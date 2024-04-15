@@ -1853,10 +1853,24 @@ keyboards:
               character:
                 char: g
             width: available
+            swipe:
+              - action:
+                  character:
+                    char: \
+                display: true
+                processByRIME: true
+                direction: up
           - action:
               character:
                 char: h
             width: available
+            swipe:
+              - action:
+                  character:
+                    char: "|"
+                display: true
+                processByRIME: true
+                direction: up
           - action:
               character:
                 char: j
@@ -2022,7 +2036,7 @@ keyboards:
             swipe:
               - action:
                   character:
-                    char: ？
+                    char: "?"
                 display: true
                 processByRIME: true
                 direction: up
@@ -2073,7 +2087,7 @@ keyboards:
               landscape:
                 percentage: 0.2
     buttonInsets:
-      left: 3
-      bottom: 4
-      top: 8
-      right: 3
+      left: 2
+      bottom: 3
+      top: 3
+      right: 2
